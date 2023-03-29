@@ -16,9 +16,13 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function dosyaAdiniBul(fullPath) {
+
+  return fullPath.replace(/^.*[\\\/]/, '');
+
+ }
+ 
+console.log("1", dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 
 /*
   GÖREV 2
@@ -38,9 +42,34 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayiarr) {
+
+  let toplam = 0
+
+  if(sayiarr.length === 0) {
+    return null
+  } else {
+
+  for (let i = 0; i < sayiarr.length; i++) {
+  
+    toplam  += sayiarr[i]
+
+  }
 }
+  let ort = (sayiarr.length) ? toplam / sayiarr.length : 0 
+
+   return ort;
+  
+  }
+
+console.log("2", ortalamaBul([]));
+
+console.log("2", ortalamaBul([4]));
+
+console.log("2", ortalamaBul([50, -26, 153, 7]));
+
+console.log("2", ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5])); 
+  
 
 /*
   GÖREV 3
@@ -62,9 +91,63 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(newArr) {
+ 
+  let sum = 0;
+    
+  if(newArr.length === 0) {
+
+    return null
+    
+  } else {
+
+    for (let i = 0; i < newArr.length; i++) {
+
+    sum += newArr[i];
+
+  }
+  
+  return sum / newArr.length;
+
+}}
+
+function yenidiziolustur(newArr) {
+
+  let ortalama = ortalamadanBuyukleriBul(newArr);
+
+  let numbers = [];
+
+  if(newArr.length === 0) {
+
+    return null
+    
+  } else {
+
+  for (let i = 0; i < newArr.length; i++) {
+
+    if (newArr[i] >= ortalama) {
+
+      numbers.push(newArr[i]);
+
+    }
+  }}
+
+  return numbers;
+
+ 
 }
+
+console.log("3.", yenidiziolustur([]));
+
+console.log("3.", yenidiziolustur([4]));
+
+console.log("3.", yenidiziolustur([50, -26, 153, 7]));
+
+console.log("3.", yenidiziolustur([109, 216, 288, 143, 71, 185, -278, 194, 5]));
+
+
+
+  
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
